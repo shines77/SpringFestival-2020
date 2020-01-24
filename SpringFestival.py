@@ -39,8 +39,8 @@ class Character(object):
 		self.country = country
 
 	def talk(self, words):
-		print(words.decode('utf-8').encode('cp936'))
-		print('\n')
+		text = '{:<12}: {}\n'.format(self.name, words.decode('utf-8').encode('cp936'))
+		print(text)
 
 	def say(self, words):
 		self.talk(words)
@@ -50,16 +50,16 @@ class Person(Character):
 		Character.__init__(self, name, sex, age, country)
 
 	def copyright(self, text):
-		self.talk(text)
+		self.talk('Copyright: {}'.format(text))
 
 	def github(self, text):
-		self.talk(text)
+		self.talk('Github: {}'.format(text))
 
 	def commit(self, msg):
-		self.talk(msg)
+		self.talk('commit at {}'.format(msg))
 
 	def byebye(self):
-		pass
+		self.talk('Bye-bye, see you next year!')
 
 class SpringFestival(object):
 	def __init__(self, year):
