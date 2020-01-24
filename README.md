@@ -4,6 +4,12 @@
 
 2020年鼠年春节祝福代码(python)。/ Spring Festival greetings code (python) for 2020 year.
 
+## 运行方式 / Run
+
+```shell
+python SpringFestival.py
+```
+
 注: 运行环境 `Python 2.7`.
 
 ## 代码 / Code
