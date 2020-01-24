@@ -3,9 +3,8 @@
 
 #coding=utf-8
 
-from enum import Enum
-import time, datetime
 import sys
+from enum import Enum
 
 # @unique
 class Sex(Enum):
