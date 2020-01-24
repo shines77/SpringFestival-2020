@@ -38,7 +38,7 @@ class Character(object):
 		self.country = country
 
 	def talk(self, words):
-		text = '{:<12}: {}\n'.format(self.name, words.decode('utf-8').encode('cp936'))
+		text = ' {:<12}: {}\n'.format(self.name, words.decode('utf-8').encode('cp936'))
 		print(text)
 
 	def say(self, words):

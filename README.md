@@ -8,7 +8,7 @@
 
 ## 代码 / Code
 
-C++：
+Python：
 
 ```python
 class SpringFestival(object):
