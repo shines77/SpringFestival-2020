@@ -1,22 +1,74 @@
-# SpringFestival-2020
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
 
-## 简介 / Introduction
+#coding=utf-8
 
-2020年鼠年春节祝福代码(python)。/ Spring Festival greetings code (python) for 2020 year.
+from enum import Enum
+import time, datetime
+import sys
 
-## 代码 / Code
+# @unique
+class Sex(Enum):
+    Unknown = -1
+    Male = 0
+    Female = 1
 
-C++：
+# @unique
+class Country(Enum):
+    UnitedStates = 0
+    UnitedKingdom = 1
+    Germany = 2
+    France = 3
+    Spain = 4
+    Italy = 5
+    Russia = 6
+    China = 7
+    Japan = 8
+    Korea = 9
 
-```python
+#
+# locale.getdefaultlocale()
+# ('zh_CN', 'cp936')
+#
+
+class Character(object):
+	def __init__(self, name, sex, age, country):
+		self.name = name
+		self.sex = sex
+		self.age = age
+		self.country = country
+
+	def talk(self, words):
+		print(words.decode('utf-8').encode('cp936'))
+		print('\n')
+
+	def say(self, words):
+		self.talk(words)
+
+class Person(Character):
+	def __init__(self, name, sex, age, country):
+		Character.__init__(self, name, sex, age, country)
+
+	def copyright(self, text):
+		self.talk(text)
+
+	def github(self, text):
+		self.talk(text)
+
+	def commit(self, msg):
+		self.talk(msg)
+
+	def byebye(self):
+		pass
+
 class SpringFestival(object):
 	def __init__(self, year):
 		self.year = year
 		# Tom & Jerry 诞生于 1940 年, 至今已经 80 年
 		self.tom = Character("Tom", Sex.Male, 80, Country.UnitedStates)
 		self.jerry = Character("Jerry", Sex.Male, 80, Country.UnitedStates)
-		# 作者本人: 郭子, 年龄不详
-		self.guozi = Person("GuoXiongHui", Sex.Male, x, Country.China)
+		# 作者: 郭子, 年龄不详
+		self.guozi = Person("GuoXiongHui", Sex.Male, 0, Country.China)
 
 	def run(self):
 		# 你好, 世界! (程序员都懂的)
@@ -49,8 +101,3 @@ class SpringFestival(object):
 
 spring_festival = SpringFestival(2020)
 spring_festival.run()
-```
-
-## 预览 / Preview
-
-![Spring Festival greetings code](./SpringFestival-2020.png)
